@@ -42,7 +42,6 @@ const LeftNav = ({ view, setView }) => {
         <MobileNarrow>
           <HamburgerMenu
             className="hamburger_menu"
-            src={HamburgerMenu}
             onClick={handleFlyout}
           />
           <FlyoutNav

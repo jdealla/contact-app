@@ -1,6 +1,10 @@
 ### Contact List App
 
-Demo contact list built in React, using static JSON.
+Sample contact list app built in React, using static JSON.
+
+#### Live Demo
+
+* https://jdealla.github.io/contact-app-demo/
 
 #### Installation
 

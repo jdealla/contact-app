@@ -46,11 +46,16 @@
 .left-nav-item:hover.left-nav-item-people svg g,
 .left-nav-item:hover.left-nav-item-companies svg g,
 .left-nav-item:hover.left-nav-item-notes svg g,
-.left-nav-item.active-nav.left-nav-item-people svg g {
+.left-nav-item.active-nav.left-nav-item-people svg g,
+.left-nav-item.active-nav.left-nav-item-dashboard svg g,
+.left-nav-item.active-nav.left-nav-item-companies svg g,
+.left-nav-item.active-nav.left-nav-item-notes svg g {
   stroke: rgb(0, 82, 140) !important;
 }
 
 .left-nav-item:hover.left-nav-item-reminders svg g,
-.left-nav-item:hover.left-nav-item-tags_and_reporting svg g {
+.left-nav-item:hover.left-nav-item-tags_and_reporting svg g,
+.left-nav-item.active-nav.left-nav-item-reminders svg g,
+.left-nav-item.active-nav.left-nav-item-tags_and_reporting svg g {
   fill: rgb(0, 82, 140) !important;
 }
