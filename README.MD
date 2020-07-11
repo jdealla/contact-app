@@ -1,4 +1,4 @@
-### Levitate Contact List
+### Contact List App
 
 Demo contact list built in React, using static JSON.
 
