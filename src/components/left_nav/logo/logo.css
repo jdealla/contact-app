@@ -27,3 +27,7 @@
   top: 20;
   left: 14;
 }
+
+.icon32 .logo-text {
+  display: none;
+}
