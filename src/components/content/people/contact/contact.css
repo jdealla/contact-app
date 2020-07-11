@@ -1,0 +1,65 @@
+.contact {
+  min-height: 50px;
+  border-top: 1px solid lightgrey;
+  padding: 10px 0 10px;
+}
+
+.contact .checkbox,
+.contact .visibility,
+.contact .avatar,
+.contact .name {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.contact .checkbox,
+.contact .visibility,
+.contact .name,
+.contact .avatar,
+.contact .tags,
+.contact .connections {
+  cursor: pointer;
+}
+
+.contact .avatar {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: lightgrey;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact .avatar span {
+  margin: auto;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+
+.contact .name {
+  font-weight: 500;
+}
+
+.contact .tags {
+  display: flex;
+  padding-right: 10px;
+  flex-wrap: wrap;
+}
+
+.contact .tags .tag {
+  color: #3b3b3b;
+  font-size: 12px;
+  font-weight: 500;
+  background: lightgrey;
+  height: 16px;
+  padding: 2px 4px;
+  margin: 1px 2px;
+}
+
+.contact .connections {
+  color: #3b3b3b;
+  font-size: 12px;
+  font-weight: 500;
+}

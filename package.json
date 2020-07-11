@@ -1,0 +1,34 @@
+{
+  "name": "levitate_challenge",
+  "version": "1.0.0",
+  "description": "Assessment for Levitate interviews",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development"
+  },
+  "author": "John DAlessandro",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "prettier": "2.0.5",
+    "react-svg-loader": "^3.0.3",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
+    "react-infinite-scroll-component": "^5.0.5",
+    "react-loading-skeleton": "^2.1.1",
+    "react-responsive": "^8.1.0"
+  }
+}

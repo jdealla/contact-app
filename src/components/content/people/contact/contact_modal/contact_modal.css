@@ -1,0 +1,98 @@
+.contact-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: grey;
+  opacity: 0.2;
+}
+
+.contact-modal-body {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  background-color: white;
+  opacity: 1;
+  left: 35vw;
+  top: 24vh;
+  max-width: 840px;
+  max-height: 880px;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.contact-modal-body .detail-header {
+  display: flex;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 10px;
+}
+
+.contact-modal-body .detail-header .info {
+  margin-left: 20px;
+}
+
+.contact-modal-body .cleaned-name {
+  font-weight: 700;
+}
+
+.contact-modal-body .detail-header .avatar {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.contact-modal-body .title {
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.contact .contact-modal-body .connections {
+  font-size: 13px;
+}
+.contact .contact-modal-body .connection {
+  margin-top: 4px;
+}
+
+/* Tablet Portrait  */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-modal-body {
+    width: 72vw;
+    left: 14vw;
+    top: 20vh;
+    padding: 20px;
+  }
+}
+
+/* Mobile Wide */
+@media (min-width: 414px) and (max-width: 767px) {
+  .contact-modal-body {
+    width: 74vw;
+    left: 17vw;
+    top: 20vh;
+    padding: 12px;
+  }
+  .contact-modal-body .detail-header .info {
+    margin-left: 10px;
+  }
+  .contact-modal-body .title {
+    margin-top: 7px;
+  }
+}
+
+/* Mobile Narrow */
+@media (max-width: 413px) {
+  .contact-modal-body {
+    width: 85vw;
+    left: 3vw;
+    top: 20vh;
+    padding: 15px;
+  }
+}

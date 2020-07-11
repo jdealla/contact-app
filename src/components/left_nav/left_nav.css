@@ -1,0 +1,35 @@
+.left_nav,
+.flyout_nav {
+  height: 100vh;
+  border-right: 1px solid lightgrey;
+  position: fixed;
+}
+
+/* Tablet Landscape and Up */
+@media (min-width: 1024px) {
+  .left_nav {
+    padding: 25px 10px;
+    width: 250px;
+  }
+}
+
+/* Mobile Wide and Tablet Portrait */
+@media (min-width: 414px) and (max-width: 1023px) {
+  .left_nav {
+    width: 60px;
+    padding: 0px 0px;
+  }
+}
+
+@media (max-width: 413px) {
+  .left_nav {
+    display: none;
+  }
+}
+
+.hamburger_menu {
+  position: fixed;
+  top: 40;
+  left: 20px;
+  z-index: 1;
+}

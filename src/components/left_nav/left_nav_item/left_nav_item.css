@@ -1,0 +1,56 @@
+.nav-item-container {
+  position: absolute;
+}
+
+/* Tablet Landscape and Up */
+@media (min-width: 1024px) {
+  .nav-item-container {
+    top: 50;
+    left: 60;
+  }
+}
+
+/* Tablet Portrait and Mobile Wide */
+@media (min-width: 414px) and (max-width: 1023px) {
+  .nav-item-container {
+    left: 20;
+    top: 90;
+  }
+}
+
+.left-nav-item {
+  cursor: pointer;
+  display: flex;
+  color: grey;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+/* Mobile Landscape */
+@media (max-height: 450px) {
+  .left-nav-item {
+    margin-top: 23px;
+  }
+}
+
+.left-nav-item svg {
+  margin-right: 15px;
+}
+
+.left-nav-item:hover,
+.left-nav-item.active-nav {
+  color: rgb(0, 82, 140);
+}
+
+.left-nav-item:hover.left-nav-item-dashboard svg g,
+.left-nav-item:hover.left-nav-item-people svg g,
+.left-nav-item:hover.left-nav-item-companies svg g,
+.left-nav-item:hover.left-nav-item-notes svg g,
+.left-nav-item.active-nav.left-nav-item-people svg g {
+  stroke: rgb(0, 82, 140) !important;
+}
+
+.left-nav-item:hover.left-nav-item-reminders svg g,
+.left-nav-item:hover.left-nav-item-tags_and_reporting svg g {
+  fill: rgb(0, 82, 140) !important;
+}

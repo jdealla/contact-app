@@ -1,0 +1,8 @@
+body {
+  margin: 0px 0px;
+}
+
+.app {
+  font-family: 'CitrixSans', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+  display: flex;
+}
