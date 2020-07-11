@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { hot } from 'react-hot-loader';
 import {
   TabletLandscapeAndLarger,
@@ -9,99 +9,92 @@ import Unlock from '../../../../img/unlock.svg';
 import ContactModal from './contact_modal/contact_modal';
 import './contact.css';
 
-class Contact extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      locked: true,
-      modalOpen: false,
-    };
-  }
+const Contact = ({ connections, email, firstName, id, lastName, tags }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [locked, setLocked] = useState(true);
 
-  toggleModal() {
-    this.setState((state) => ({ modalOpen: !state.modalOpen }));
-  }
+  const handleModal = () => setModalOpen(!modalOpen);
+  const handleLocked = () => setLocked(!locked);
 
-  toggleVisibility() {
-    this.setState((state) => ({ locked: !state.locked }));
-  }
-
-  cleanName(firstName, lastName) {
+  const cleanName = (firstName, lastName) => {
     return `${firstName ? firstName : ''}${firstName && lastName ? ' ' : ''}${
       lastName ? lastName : ''
     }`;
-  }
+  };
 
-  render() {
-    const { firstName, lastName, tags, connections, email } = this.props;
-    const cleanedConnections = connections
-      ? connections.map(({ firstName, lastName }) =>
-          this.cleanName(firstName, lastName)
-        )
-      : null;
-    const cleanedName = this.cleanName(firstName, lastName);
-    const avatar = `${firstName ? firstName[0] : ''}${
-      lastName ? lastName[0] : ''
-    }`;
-    return (
-      <div className="contact">
-        {this.state.modalOpen ? (
-          <ContactModal
-            toggleModal={this.toggleModal.bind(this)}
-            tags={tags}
-            avatar={avatar}
-            cleanedName={cleanedName}
-            connections={cleanedConnections}
-            email={email}
-          />
-        ) : null}
+  const cleanedConnections = connections ? connections.reduce((acc, { firstName, lastName }) => {
+    if (firstName || lastName) {
+      acc.push(cleanName(firstName, lastName))
+    }
+    return acc;
+  }, []) : null;
 
-        <input className="checkbox" type="checkbox" />
-        <div className="visibility" onClick={this.toggleVisibility.bind(this)}>
-          {this.state.locked ? <Lock /> : <Unlock />}
-        </div>
-        <div onClick={this.toggleModal.bind(this)} className="avatar">
-          <span>{avatar}</span>
-        </div>
-        <div onClick={this.toggleModal.bind(this)} className="name">
-          {cleanedName}
-        </div>
+  const cleanedName = cleanName(firstName, lastName);
+  
+  const avatar = `${firstName ? firstName[0] : ''}${lastName ? lastName[0] : ''}`;
+  
+  return (
+    <div className="contact">
+      
+      {modalOpen ? (
+        <ContactModal
+          handleModal={handleModal}
+          tags={tags}
+          avatar={avatar}
+          cleanedName={cleanedName}
+          connections={cleanedConnections}
+          email={email}
+        />
+      ) : null}
 
-        <TabletPortraitAndLarger>
-          <div onClick={this.toggleModal.bind(this)} className="tags">
-            {tags
-              ? tags.map((tag, i) => {
-                  return (
-                    <div className="tag" key={'tag' + i}>
-                      {tag}
-                    </div>
-                  );
-                })
-              : ''}
-          </div>
-        </TabletPortraitAndLarger>
+      <input className="checkbox" type="checkbox" />
 
-        <TabletLandscapeAndLarger>
-          <div onClick={this.toggleModal.bind(this)} className="connections">
-            {connections
-              ? cleanedConnections.reduce((acc, name, index) => {
-                  if (index === 0) {
-                    acc += name;
-                  }
-                  if (index === 1) {
-                    acc += `, ${name}`;
-                    if (connections.length > 2) {
-                      acc += ` and ${connections.length - 2} more`;
-                    }
-                  }
-                  return acc;
-                }, '')
-              : ''}
-          </div>
-        </TabletLandscapeAndLarger>
+      <div className="visibility" onClick={handleLocked}>
+        {locked ? <Lock /> : <Unlock />}
       </div>
-    );
-  }
+
+      <div onClick={handleModal} className="avatar">
+        <span>{avatar}</span>
+      </div>
+
+      <div onClick={handleModal} className="name">
+        {cleanedName}
+      </div>
+
+      <TabletPortraitAndLarger>
+        <div onClick={handleModal} className="tags">
+          {tags
+            ? tags.map((tag, i) => {
+                return (
+                  <div className="tag" key={'tag' + i}>
+                    {tag}
+                  </div>
+                );
+              })
+            : ''}
+        </div>
+      </TabletPortraitAndLarger>
+
+      <TabletLandscapeAndLarger>
+        <div onClick={handleModal} className="connections">
+          {connections
+            ? cleanedConnections.reduce((acc, name, index) => {
+                if (index === 0) {
+                  acc += name;
+                }
+                if (index === 1) {
+                  acc += `, ${name}`;
+                  if (connections.length > 2) {
+                    acc += ` and ${connections.length - 2} more`;
+                  }
+                }
+                return acc;
+              }, '')
+            : ''}
+        </div>
+      </TabletLandscapeAndLarger>
+    </div>
+  );
 }
 
 export default hot(module)(Contact);
