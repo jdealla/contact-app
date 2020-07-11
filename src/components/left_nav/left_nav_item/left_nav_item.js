@@ -3,10 +3,8 @@ import { hot } from 'react-hot-loader';
 import './left_nav_item.css';
 import { ExcludeTabletPortraitAndMobileWide } from '../../breakpoints';
 
-const LeftNavItem = (props) => {
-  const { Img, title, id, isMobile, isActive } = props;
-  return (
-    <div
+const LeftNavItem = ({ Img, title, id, isMobile, isActive, setView }) => (
+    <div onClick={() => setView(id)}
       className={`left-nav-item left-nav-item-${id}${
         isActive ? ' active-nav' : ''
       }${isMobile ? ' mobile-item' : ''}`}>
@@ -16,6 +14,5 @@ const LeftNavItem = (props) => {
       </ExcludeTabletPortraitAndMobileWide>
     </div>
   );
-};
 
 export default hot(module)(LeftNavItem);

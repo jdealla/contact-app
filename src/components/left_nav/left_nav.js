@@ -11,11 +11,11 @@ import Logo from '../left_nav/logo/logo';
 import HamburgerMenu from '../../img/HamburgerMenu.svg';
 import { navData } from './navData';
 
-const LeftNav = ({ view }) => {
+const LeftNav = ({ view, setView }) => {
   const [flyoutOpen, setFlyoutOpen] = useState(false);
   const handleFlyout = () => setFlyoutOpen(!flyoutOpen);
 
-  const renderNavItems = ({ navClassName, isMobile, view}) => (
+  const renderNavItems = ({ navClassName, isMobile, view, setView}) => (
     <div className={navClassName}>
       {navData.map(({ id, title, Img }) => (
         <LeftNavItem
@@ -25,6 +25,7 @@ const LeftNav = ({ view }) => {
           Img={Img}
           key={id}
           title={title}
+          setView={setView}
         />
       ))}
     </div>
@@ -35,7 +36,7 @@ const LeftNav = ({ view }) => {
 
         <div className="left_nav">
           <Logo />
-          {renderNavItems({navClassName: 'nav-item-container', view, isMobile: false})}
+          {renderNavItems({navClassName: 'nav-item-container', view, isMobile: false, setView})}
         </div>
 
         <MobileNarrow>
@@ -49,6 +50,7 @@ const LeftNav = ({ view }) => {
             flyoutOpen={flyoutOpen}
             overlayClick={handleFlyout}
             renderNavItems={renderNavItems}
+            setView={setView}
           />
         </MobileNarrow>
 
