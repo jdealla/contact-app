@@ -22,20 +22,23 @@ const Contact = ({ connections, email, firstName, id, lastName, tags }) => {
     }`;
   };
 
-  const cleanedConnections = connections ? connections.reduce((acc, { firstName, lastName }) => {
-    if (firstName || lastName) {
-      acc.push(cleanName(firstName, lastName))
-    }
-    return acc;
-  }, []) : null;
+  const cleanedConnections = connections
+    ? connections.reduce((acc, { firstName, lastName }) => {
+        if (firstName || lastName) {
+          acc.push(cleanName(firstName, lastName));
+        }
+        return acc;
+      }, [])
+    : null;
 
   const cleanedName = cleanName(firstName, lastName);
-  
-  const avatar = `${firstName ? firstName[0] : ''}${lastName ? lastName[0] : ''}`;
-  
+
+  const avatar = `${firstName ? firstName[0] : ''}${
+    lastName ? lastName[0] : ''
+  }`;
+
   return (
     <div className="contact">
-      
       {modalOpen ? (
         <ContactModal
           handleModal={handleModal}
@@ -95,6 +98,6 @@ const Contact = ({ connections, email, firstName, id, lastName, tags }) => {
       </TabletLandscapeAndLarger>
     </div>
   );
-}
+};
 
 export default hot(module)(Contact);

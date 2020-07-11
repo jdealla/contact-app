@@ -17,7 +17,7 @@ const views = {
   tags_and_reporting: TagsAndReporting,
 };
 
-const formatName = str => str.split('_').join(' ').replace('and', '&');
+const formatName = (str) => str.split('_').join(' ').replace('and', '&');
 
 const Content = ({ view }) => {
   let CurrentView = views[view];

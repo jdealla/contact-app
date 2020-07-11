@@ -13,6 +13,6 @@ const App = () => {
       <Content view={view} />
     </div>
   );
-}
+};
 
 export default hot(module)(App);

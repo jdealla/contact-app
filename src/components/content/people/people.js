@@ -6,9 +6,27 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import HeaderRow from './header_row/header_row';
 import Skeleton from 'react-loading-skeleton';
 
-const PRIMARY_API_URL = 'https://s3.amazonaws.com/exercise.realmagic.ai/mock-contact-data/contacts_0.json';
+const PRIMARY_API_URL =
+  'https://s3.amazonaws.com/exercise.realmagic.ai/mock-contact-data/contacts_0.json';
 
-const loader = (<div className="lds-container"><div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>);
+const loader = (
+  <div className="lds-container">
+    <div className="lds-default">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+);
 
 const People = () => {
   const [contacts, setContacts] = useState([]);
@@ -55,6 +73,6 @@ const People = () => {
       </div>
     </div>
   );
-}
+};
 
 export default hot(module)(People);

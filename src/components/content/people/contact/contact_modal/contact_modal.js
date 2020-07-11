@@ -2,7 +2,14 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 import './contact_modal.css';
 
-const ContactModal = ({ cleanedName, avatar, tags, email, connections, handleModal }) => {
+const ContactModal = ({
+  cleanedName,
+  avatar,
+  tags,
+  email,
+  connections,
+  handleModal,
+}) => {
   return (
     <div className="contact-modal-container">
       <div className="contact-modal-overlay" onClick={handleModal}></div>
